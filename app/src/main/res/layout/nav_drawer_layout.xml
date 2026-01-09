@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:id="@+id/nav_profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/nav_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email address"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nav_settings"
+                style="@style/SettingsItem"
+                android:text="Settings" />
+
+            <TextView
+                android:id="@+id/nav_create_matchup"
+                style="@style/SettingsItem"
+                android:text="Create Matchup" />
+
+            <TextView
+                android:id="@+id/nav_create_panna"
+                style="@style/SettingsItem"
+                android:text="Create Panna 1v1" />
+
+            <TextView
+                android:id="@+id/nav_create_futsal"
+                style="@style/SettingsItem"
+                android:text="Create Futsal Match" />
+
+            <TextView
+                android:id="@+id/nav_about_us"
+                style="@style/SettingsItem"
+                android:text="About Us" />
+
+            <TextView
+                android:id="@+id/nav_logout"
+                style="@style/SettingsItem"
+                android:text="Log out"
+                android:textColor="#FF0000"
+                app:drawableEndCompat="@android:drawable/ic_delete"
+                app:drawableTint="#FF0000" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

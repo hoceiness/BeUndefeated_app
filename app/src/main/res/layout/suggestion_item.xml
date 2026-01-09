@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:background="@drawable/post_background"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/suggestion_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/suggestion_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nickname"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/suggestion_followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16.2k"
+        android:textSize="10sp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/btn_follow_suggestion"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="Follow"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:padding="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:backgroundTint="@color/orange"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

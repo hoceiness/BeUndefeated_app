@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#10101B"
+    android:padding="2dp">
+
+    <!-- Red Border Simulation -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/input_field_outline"
+        android:backgroundTint="#FF0000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        android:background="#10101B">
+
+        <!-- Top Bar -->
+        <TextView
+            android:id="@+id/page_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="UNDEFEATED"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/logo"
+            app:layout_constraintEnd_toStartOf="@+id/balance_container"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/balance_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/card_background"
+            android:paddingStart="12dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logo">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAD: "
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200.0"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Tabs -->
+                <LinearLayout
+                    android:id="@+id/tabs_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/tab_today"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="Today's Match"
+                        android:textSize="10sp"
+                        android:backgroundTint="@color/orange"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/tab_tomorrow"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="Tomorrow Match"
+                        android:textSize="10sp"
+                        android:backgroundTint="#333344"
+                        android:textColor="#AAAAAA"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/tab_history"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="Match History"
+                        android:textSize="10sp"
+                        android:backgroundTint="#333344"
+                        android:textColor="#AAAAAA"/>
+                </LinearLayout>
+
+                <!-- Filters Section -->
+                <TextView
+                    android:id="@+id/filters_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filters"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"/>
+
+                <LinearLayout
+                    android:id="@+id/filters_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Match Category Filter -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/input_field_outline"
+                        android:padding="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginEnd="16dp"
+                            android:minWidth="80dp">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@android:drawable/ic_input_add"
+                                app:tint="#A0A0FF"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Match Category"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="2"
+                            android:rowCount="2">
+
+                            <Button
+                                android:id="@+id/filter_5v5"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_columnWeight="1"
+                                android:text="5 VS 5"
+                                android:textSize="8sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"/>
+
+                            <Button
+                                android:id="@+id/filter_7v7"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_columnWeight="1"
+                                android:text="7 VS 7"
+                                android:textSize="8sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"
+                                android:layout_marginStart="4dp"/>
+
+                            <Button
+                                android:id="@+id/filter_panna"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_columnWeight="1"
+                                android:text="Panna"
+                                android:textSize="8sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"
+                                android:layout_marginTop="4dp"/>
+
+                            <Button
+                                android:id="@+id/filter_futsal"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_columnWeight="1"
+                                android:text="Futsal"
+                                android:textSize="8sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"/>
+                        </GridLayout>
+                    </LinearLayout>
+
+                    <!-- Match Status Filter -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/input_field_outline"
+                        android:padding="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginEnd="16dp"
+                            android:minWidth="80dp">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@android:drawable/ic_menu_search"
+                                app:tint="#40E0D0"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Match Status"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="2"
+                            android:rowCount="2">
+
+                            <Button
+                                android:id="@+id/filter_all"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_columnWeight="1"
+                                android:text="All"
+                                android:textSize="10sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"/>
+
+                            <Button
+                                android:id="@+id/filter_open"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_columnWeight="1"
+                                android:text="Open"
+                                android:textSize="10sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"
+                                android:layout_marginStart="4dp"/>
+
+                            <Button
+                                android:id="@+id/filter_full"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_columnWeight="1"
+                                android:text="Full"
+                                android:textSize="10sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"
+                                android:layout_marginTop="4dp"/>
+
+                            <Button
+                                android:id="@+id/filter_private"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_columnWeight="1"
+                                android:text="Private"
+                                android:textSize="10sp"
+                                android:textColor="#AAAAAA"
+                                android:background="@drawable/role_badge_background"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"/>
+                        </GridLayout>
+                    </LinearLayout>
+
+                    <!-- City & Time Filter -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/input_field_outline"
+                        android:padding="8dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginEnd="16dp"
+                            android:minWidth="80dp">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@android:drawable/ic_menu_search"
+                                app:tint="#40E0D0"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="City &amp; Time"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/filter_city_spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:background="@drawable/role_badge_background"/>
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:columnCount="2"
+                                android:rowCount="2"
+                                android:layout_marginTop="4dp">
+
+                                <Button
+                                    android:id="@+id/filter_allday"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_columnWeight="1"
+                                    android:text="AllDay"
+                                    android:textSize="10sp"
+                                    android:textColor="#AAAAAA"
+                                    android:background="@drawable/role_badge_background"/>
+
+                                <Button
+                                    android:id="@+id/filter_morning"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_columnWeight="1"
+                                    android:text="Morning"
+                                    android:textSize="10sp"
+                                    android:textColor="#AAAAAA"
+                                    android:background="@drawable/role_badge_background"
+                                    android:layout_marginStart="4dp"/>
+
+                                <Button
+                                    android:id="@+id/filter_afternoon"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_columnWeight="1"
+                                    android:text="Afternoon"
+                                    android:textSize="10sp"
+                                    android:textColor="#AAAAAA"
+                                    android:background="@drawable/role_badge_background"
+                                    android:layout_marginTop="4dp"/>
+
+                                <Button
+                                    android:id="@+id/filter_evening"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="0dp"
+                                    android:layout_height="35dp"
+                                    android:layout_columnWeight="1"
+                                    android:text="Evening"
+                                    android:textSize="10sp"
+                                    android:textColor="#AAAAAA"
+                                    android:background="@drawable/role_badge_background"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"/>
+                            </GridLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_apply_filters"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:text="Apply Filters"
+                        android:backgroundTint="@color/orange"
+                        android:textColor="@android:color/white"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <!-- Results Section -->
+                <LinearLayout
+                    android:id="@+id/results_header_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/results_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Today's available matches"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/results_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 match found"
+                        android:textColor="@color/orange"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/matches_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/match_item"
+                    tools:itemCount="5"/>
+
+                <Button
+                    android:id="@+id/btn_load_more_matches"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="Load More"
+                    android:backgroundTint="@color/orange"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

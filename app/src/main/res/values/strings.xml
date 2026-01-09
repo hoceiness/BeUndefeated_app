@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">BeUndefeated app</string>
+
+    <string-array name="moroccan_cities">
+        <item>Casablanca</item>
+        <item>Rabat</item>
+        <item>Marrakech</item>
+        <item>Fes</item>
+        <item>Tangier</item>
+        <item>Agadir</item>
+        <item>Meknes</item>
+        <item>Oujda</item>
+        <item>Kenitra</item>
+        <item>Tetouan</item>
+        <item>Safi</item>
+        <item>Mohammedia</item>
+        <item>Beni Mellal</item>
+        <item>El Jadida</item>
+        <item>Taza</item>
+        <item>Nador</item>
+        <item>Settat</item>
+        <item>Larache</item>
+        <item>Khemisset</item>
+        <item>Guelmim</item>
+    </string-array>
+</resources>

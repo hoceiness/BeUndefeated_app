@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/nav_make_deposit"
+        android:title="Make a Deposit" />
+    <item
+        android:id="@+id/nav_make_withdrawal"
+        android:title="Make a Withdrawal" />
+    <item
+        android:id="@+id/nav_create_squad"
+        android:title="Create Squad" />
+    <item
+        android:id="@+id/nav_verification_gcu"
+        android:title="Verification GCU" />
+    <item
+        android:id="@+id/nav_about_us"
+        android:title="About Us" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Log out" />
+</menu>

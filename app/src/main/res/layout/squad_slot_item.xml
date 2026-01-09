@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#1A1A24"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <!-- Outlined look via background on inner layout or stroke -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_field_outline"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/player_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/player_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nickname"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/player_avatar"
+            app:layout_constraintTop_toTopOf="@+id/player_avatar"
+            android:layout_marginStart="16dp"/>
+
+        <ImageView
+            android:id="@+id/status_dot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:src="@drawable/status_online_dot"
+            app:layout_constraintStart_toEndOf="@+id/player_avatar"
+            app:layout_constraintTop_toBottomOf="@+id/player_nickname"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/player_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="online"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/status_dot"
+            app:layout_constraintBottom_toBottomOf="@+id/status_dot"
+            app:layout_constraintTop_toTopOf="@+id/status_dot"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Role Badge (e.g., Leader, 2nd, 3rd) -->
+        <TextView
+            android:id="@+id/role_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leader"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:background="@drawable/role_badge_background"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
